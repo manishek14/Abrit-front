@@ -4,6 +4,21 @@ Production admin SPA for the AbrIT Telegram support-ticketing system.
 Vite + React 18 + TypeScript (strict) + Ant Design 5 + TanStack Query v5 +
 axios + react-router v7 + socket.io-client v4, with dayjs for dates.
 
+> **Repository split:** this panel was extracted from the
+> [AbrIT monorepo](https://github.com/manishek14/Abrit); the NestJS backend
+> (Telegram bot, REST API, Socket.IO, PostgreSQL) now lives in
+> [Abrit-back](https://github.com/manishek14/Abrit-back).
+
+## Screenshots
+
+![login](docs/screenshots/01-login.png)
+![dashboard](docs/screenshots/02-dashboard.png)
+![live ticket](docs/screenshots/03-ticket-live.png)
+![settings](docs/screenshots/04-settings.png)
+
+*(Screenshots are from a real run — the ticket screen shows a Telegram
+message arriving over the live websocket while the panel stays open.)*
+
 ## Features
 
 - **Auth** — email/password login, JWT stored in `localStorage` under
