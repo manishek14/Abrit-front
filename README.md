@@ -92,3 +92,15 @@ src/
   (`BigInt`), never lexicographically.
 - No secrets are committed; the API/WS base URLs come from env vars with
   localhost defaults.
+
+## Sync provenance
+
+- **Sync base:** `manishek14/Abrit@4dde1ca` — monorepo `main` HEAD at
+  extraction time (2026-11-06). Every commit below the extraction commit maps
+  1:1 to a monorepo commit that touched `frontend/`.
+- Application code is byte-identical to the monorepo subtree (verified by git
+  tree-hash comparison); standalone additions are limited to the CI workflow,
+  `.env.example`, this note and the copied screenshots.
+- To sync future monorepo changes: cherry-pick monorepo commits touching
+  `frontend/`, or re-run `git filter-branch --subdirectory-filter frontend`
+  on the monorepo and merge.
