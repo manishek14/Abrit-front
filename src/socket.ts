@@ -25,6 +25,12 @@ export function getCurrentTicketId(): string | null {
 export function createSocket(): Socket {
   return io(WS_BASE_URL, {
     withCredentials: true,
-    transports: ['websocket', 'polling'],
+    // Polling first: on Vercel (vercel.json rewrite) the WebSocket upgrade is
+    // not proxied, and engine.io does NOT auto-fall-back to another transport
+    // unless `tryAllTransports` is set — websocket-first would never connect.
+    // Polling connects through the rewrite immediately; engine.io still probes
+    // a websocket upgrade afterwards (native proxy deployments upgrade, Vercel
+    // stays on polling).
+    transports: ['polling', 'websocket'],
   });
 }
