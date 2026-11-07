@@ -6,6 +6,14 @@
       "destination": "https://abrit-back-production.up.railway.app/api/:path*"
     },
     {
+      "source": "/socket.io",
+      "destination": "https://abrit-back-production.up.railway.app/socket.io/"
+    },
+    {
+      "source": "/socket.io/",
+      "destination": "https://abrit-back-production.up.railway.app/socket.io/"
+    },
+    {
       "source": "/socket.io/:path*",
       "destination": "https://abrit-back-production.up.railway.app/socket.io/:path*"
     },
